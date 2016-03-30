@@ -64,7 +64,8 @@ setup(
 
     # This line is required for any distutils based packaging.
     # It will find all package-data inside the 'bob' directory.
-    packages = find_packages('bob'),
+    #packages = find_packages('bob'),
+    packages = find_packages(),
     include_package_data = True,
 
     # This line defines which packages should be installed when you "install"
@@ -92,7 +93,8 @@ setup(
 
       # scripts should be declared using this entry:
       'console_scripts' : [
-        'test.py = bob.example.project.script.test:main',
+        'test.py = bob.ip.skincolorfilter.script.test:main',
+        'test_skin_color_filter.py = bob.ip.skincolorfilter.script.test_skin_color_filter:main',
       ],
     },
 
