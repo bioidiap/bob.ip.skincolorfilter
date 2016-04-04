@@ -1,8 +1,8 @@
-.. vim: set fileencoding=utf-8 :
-.. Guillaume HEUSCH <guillaume.heusch@idiap.ch>
-.. Wed 30 Mar 15:46:29 CEST 2016
-..
-.. Copyright (C) 2015 Idiap Research Institute, Martigny, Switzerland
+.. Bob skin color filter documentation master file, created by
+   sphinx-quickstart on Mon Apr  4 14:15:40 2016.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
 
 .. _bob.ip.skincolorfilter:
 
@@ -36,6 +36,3 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
-
-.. include:: links.rst

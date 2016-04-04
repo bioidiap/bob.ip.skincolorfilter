@@ -30,7 +30,7 @@ def show_image(image, title=''):
 
 def main(user_input=None):
 
-  image = bob.io.base.load('./bob/ip/skincolorfilter/data/001.png')
+  image = bob.io.base.load('./bob/ip/skincolorfilter/data/001.bmp')
   show_image(image, 'original image')
 
   detection = bob.ip.facedetect.detect_single_face(image)

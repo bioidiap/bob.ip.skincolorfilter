@@ -1,14 +1,15 @@
 #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
-# Andre Anjos <andre.anjos@idiap.ch>
-# Mon 13 Aug 2012 12:38:15 CEST
+# Guillaume Heusch <guillaume.heusch@idiap.ch>
+# Mon Apr  4 14:24:42 CET 2016
 #
-# Copyright (C) 2011-2014 Idiap Research Institute, Martigny, Switzerland
+# Copyright (C) 2011-2016 Idiap Research Institute, Martigny, Switzerland
 
 import os
 import sys
 import glob
 import pkg_resources
+
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -25,12 +26,13 @@ import pkg_resources
 extensions = [
   'sphinx.ext.todo',
   'sphinx.ext.coverage',
-  'sphinx.ext.pngmath',
+  'sphinx.ext.imgmath',
   'sphinx.ext.ifconfig',
   'sphinx.ext.autodoc',
   'sphinx.ext.autosummary',
   'sphinx.ext.doctest',
   'sphinx.ext.intersphinx',
+  'matplotlib.sphinxext.plot_directive',
   ]
 
 # The viewcode extension appeared only on Sphinx >= 1.0.0
@@ -58,12 +60,12 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Bob Example Project'
+project = u'Skin color filter using Bob'
 import time
 copyright = u'%s, Idiap Research Institute' % time.strftime('%Y')
 
 # Grab the setup entry
-distribution = pkg_resources.require('bob.example.project')[0]
+distribution = pkg_resources.require('bob.ip.skincolorfilter')[0]
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -86,7 +88,7 @@ release = distribution.version
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-#exclude_patterns = ['**/links.rst']
+exclude_patterns = ['links.rst']
 
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
@@ -108,13 +110,15 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
+# Included after all input documents
+rst_epilog = ''
+
 
 # -- Options for HTML output ---------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-if sphinx.__version__ >= "1.0":
-  html_theme = 'nature'
+html_theme = 'default'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -129,21 +133,21 @@ if sphinx.__version__ >= "1.0":
 #html_title = None
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = 'bob'
+#html_short_title = None
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = ''
+html_logo = 'img/logo.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
-html_favicon = ''
+html_favicon = 'img/favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-#html_static_path = ['_static']
+# html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -187,7 +191,7 @@ html_favicon = ''
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'bob_example_project_doc'
+htmlhelp_basename = 'bob_ip_skincolorfilter_doc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -201,13 +205,13 @@ latex_font_size = '10pt'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'bob_example_project.tex', u'Bob',
+  ('index', 'bob_ip_skincolorfilter.tex', u'Documentation for the skin color filter',
    u'Biometrics Group, Idiap Research Institute', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
-latex_logo = ''
+#latex_logo = None
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
@@ -219,24 +223,19 @@ latex_logo = ''
 # If true, show URL addresses after external links.
 #latex_show_urls = False
 
-# Additional stuff for the LaTeX preamble.
-#latex_preamble = ''
-
 # Documents to append as an appendix to all manuals.
 #latex_appendices = []
 
 # If false, no module index is generated.
 #latex_domain_indices = True
 
-# Included after all input documents
-rst_epilog = ''
 
 # -- Options for manual page output --------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'bob.example.project', u'Bob Example Project Documentation', [u'Idiap Research Institute'], 1)
+    ('index', 'bob.ip.skincolorfilter', u'Documentation for the skin color filter', [u'Idiap Research Institute'], 1)
 ]
 
 # Default processing flags for sphinx
@@ -246,7 +245,7 @@ autodoc_default_flags = ['members', 'undoc-members', 'inherited-members', 'show-
 
 # For inter-documentation mapping:
 from bob.extension.utils import link_documentation
-intersphinx_mapping = link_documentation()
+intersphinx_mapping = link_documentation(['python', 'numpy', 'scipy', 'matplotlib', 'bob.db.verification.utils'])
 
 
 def setup(app):
