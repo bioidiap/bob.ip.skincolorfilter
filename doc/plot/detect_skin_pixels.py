@@ -18,8 +18,12 @@ skin_image = numpy.copy(face_image)
 skin_image[:, numpy.logical_not(skin_mask)] = 0
 
 from matplotlib import pyplot
-ax = pyplot.subplot(2, 1, 1)
+f, ax = pyplot.subplots(2, 1)
+ax[0].set_title('Original Image')
+ax[0].set_xticks([])
+ax[0].set_yticks([])
 ax[0].imshow(numpy.rollaxis(numpy.rollaxis(face_image, 2),2))
-ax[0].title('Original Image')
+ax[1].set_title('Detected skin pixels')
+ax[1].set_xticks([])
+ax[1].set_yticks([])
 ax[1].imshow(numpy.rollaxis(numpy.rollaxis(skin_image, 2),2))
-ax[1].title('Detected skin pixels')

@@ -80,7 +80,7 @@ class SkinColorFilter():
     g = numpy.zeros((image.shape[1], image.shape[2]))
     g[nonzero_mask] = image[1, nonzero_mask] / channel_sum[nonzero_mask]
     self.mean = numpy.array([numpy.mean(r[mask]), numpy.mean(g[mask])])
-    
+   
     # get the covariance
     r_minus_mean = r[mask] - self.mean[0]
     g_minus_mean = g[mask] - self.mean[1]
