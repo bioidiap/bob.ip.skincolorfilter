@@ -33,7 +33,7 @@ Please make sure that you have read the `Dependencies <https://github.com/idiap/
 Documentation and Further Information
 -------------------------------------
 
-For further documentation on this package, please read the `Stable Version <http://pythonhosted.org/bob.ip.skincolorfilter/index.html>`_ or the `Latest Version <https://www.idiap.ch/software/bob/docs/latest/bioidiap/bob.ip.skincolor/master/index.html>`_ of the documentation.
+For further documentation on this package, please read the `Stable Version <http://pythonhosted.org/bob.ip.skincolorfilter/index.html>`_ or the `Latest Version <https://www.idiap.ch/software/bob/docs/latest/bioidiap/bob.ip.skincolorfilter/master/index.html>`_ of the documentation.
 For a list of tutorials on this or the other packages of Bob_, or information on submitting issues, asking questions and starting discussions, please visit its website.
 
 .. _bob: https://www.idiap.ch/software/bob
