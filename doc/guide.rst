@@ -7,18 +7,23 @@
    import bob.io.base.test_utils
    import bob.io.image
    import bob.ip.facedetect
-   from bob.ip.skincolorfilter.skin_color_filter import SkinColorFilter
+   import bob.ip.skincolorfilter
 
    import pkg_resources
-   face_image = bob.io.base.load(bob.io.base.test_utils.datafile('001.png', 'bob.ip.skincolorfilter'))
+   face_image = bob.io.base.load(bob.io.base.test_utils.datafile('test-face.jpg', 'bob.ip.skincolorfilter'))
 
 =============
- Users Guide
+ User Guide
 =============
 
-This skin color filter relies on the result of face detection. The skin color values 
-are estimated from the center of the detected face area. The probability of a pixel
-to be of skin color is modeled as a bivariate gaussian in the normalized rg colorspace 
+This skin color filter relies on the result of face detection, hence you might want to
+use :py:mod:`bob.ip.facedetect` (and in particular :py:func:`bob.ip.facedetect.detect_single_face`) 
+to first detect a face in the image. 
+
+The skin color distribution is modeled as a bivariate gaussian in the normalised rg colorspace. 
+The parameters of the distribution are estimated from a circular region centered on the face,
+where extreme luma values have been eliminated (see [taylor-spie-2014]_ for details). 
+
 
 Skin pixels detection in a single image
 ---------------------------------------
@@ -29,21 +34,22 @@ Hence, to detect skin pixels inside a face image, you should do the following:
 
 .. doctest::
 
-   >>> face_image = bob.io.base.load('001.png') # doctest: +SKIP
+   >>> face_image = bob.io.base.load('test-face.jpg') # doctest: +SKIP
    >>> detection = bob.ip.facedetect.detect_single_face(face_image)
    >>> bounding_box, quality = bob.ip.facedetect.detect_single_face(face_image)
    >>> face = face_image[:, bounding_box.top:bounding_box.bottom, bounding_box.left:bounding_box.right]
-   >>> skin_filter = SkinColorFilter()
-   >>> skin_filter.get_gaussian_parameters(face)
-   >>> skin_mask = skin_filter.get_skin_pixels(face_image, 0.5)
+   >>> skin_filter = bob.ip.skincolorfilter.SkinColorFilter()
+   >>> skin_filter.estimate_gaussian_parameters(face)
+   >>> skin_mask = skin_filter.get_skin_mask(face_image, 0.5)
 
 
 .. plot:: plot/detect_skin_pixels.py
    :include-source: False
 
+Picture taken from https://stocksnap.io/photo/W7GS1022QN
 
 Skin pixels detection in videos
 -------------------------------
-To detect skin pixels in video, you don't need to re-init the gaussian parameters at each frame.
-However, you can do it if you really want to by calling the appropriate function (i.e. get_gaussian_parameters).
+To detect skin pixels in video, you do not need to re-estimate the gaussian parameters at each frame.
+However, you can do it by calling :py:meth:`SkinColorFilter.estimate_gaussian_parameters`.
 
