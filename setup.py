@@ -33,10 +33,11 @@
 # allows you to test your package with new python dependencies w/o requiring
 # administrative interventions.
 
-bob_packages = ['bob.core', 'bob.io.base', 'bob.io.image', 'bob.ip.base', 'bob.ip.facedetect']
+# needed for C++ extensions
+#bob_packages = ['bob.core', 'bob.io.base', 'bob.io.image', 'bob.ip.base', 'bob.ip.facedetect']
+#dist.Distribution(dict(setup_requires = ['bob.extension', 'bob.blitz'] + bob_packages))
 
-from setuptools import setup, find_packages, dist
-dist.Distribution(dict(setup_requires = ['bob.extension', 'bob.blitz'] + bob_packages))
+from setuptools import setup, find_packages
 
 # load the requirements.txt for additional requirements
 from bob.extension.utils import load_requirements
@@ -48,6 +49,9 @@ setup(
 
     # This is the basic information about your project. Modify all this
     # information before releasing code publicly.
+
+    # load_version may exist, check on recent package
+
     name = 'bob.ip.skincolorfilter',
     version = open("version.txt").read().rstrip(),
     description = 'Skin color filter in the rg colorspace',
@@ -89,14 +93,6 @@ setup(
     #
     # In this simple example we will create a single program that will print
     # the version of bob.
-    entry_points = {
-
-      # scripts should be declared using this entry:
-      'console_scripts' : [
-        'test.py = bob.ip.skincolorfilter.script.test:main',
-        'test_skin_color_filter.py = bob.ip.skincolorfilter.script.test_skin_color_filter:main',
-      ],
-    },
 
     # Classifiers are important if you plan to distribute this package through
     # PyPI. You can find the complete list of classifiers that are valid and
@@ -108,6 +104,5 @@ setup(
       'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
       'Natural Language :: English',
       'Programming Language :: Python',
-      'Topic :: Scientific/Engineering :: Artificial Intelligence',
     ],
 )
