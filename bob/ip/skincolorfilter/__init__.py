@@ -6,6 +6,14 @@
 import sys
 import numpy
 
+def get_config():
+  """Returns a string containing the configuration information.
+  """
+  import bob.extension
+  return bob.extension.get_config(__name__)
+
+
+
 class SkinColorFilter():
   """
   This class implements a number of functions to perform skin color filtering. 
@@ -173,3 +181,6 @@ class SkinColorFilter():
     skin_map = numpy.exp(-0.5 * probs)
 
     return skin_map > threshold
+
+# gets sphinx autodoc done right - don't remove it
+__all__ = [_ for _ in dir() if not _.startswith('_')]
