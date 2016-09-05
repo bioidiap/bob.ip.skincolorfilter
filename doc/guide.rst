@@ -43,7 +43,7 @@ Hence, to detect skin pixels inside a face image, you should do the following:
    >>> skin_mask = skin_filter.get_skin_mask(face_image, 0.5)
 
 
-.. plot:: plot/detect_skin_pixels.py
+.. plot:: pyplots/detect_skin_pixels.py
    :include-source: False
 
 Picture taken from https://stocksnap.io/photo/W7GS1022QN

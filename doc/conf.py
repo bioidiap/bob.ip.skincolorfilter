@@ -14,6 +14,7 @@ needs_sphinx = '1.3'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+sys.path.append(os.path.abspath('sphinxext'))
 extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
@@ -25,6 +26,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
+    'matplotlib.sphinxext.plot_directive',
     ]
 
 import sphinx
