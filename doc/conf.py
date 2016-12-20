@@ -25,7 +25,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
-    #'matplotlib.sphinxext.plot_directive'
+    'matplotlib.sphinxext.plot_directive'
     ]
 
 import sphinx
