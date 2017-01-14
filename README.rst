@@ -1,17 +1,17 @@
 .. vim: set fileencoding=utf-8 :
 .. Mon 05 Sep 2016 11:50:02 CEST
 
-.. image:: http://img.shields.io/badge/docs-stable-yellow.png
+.. image:: http://img.shields.io/badge/docs-stable-yellow.svg
    :target: http://pythonhosted.org/bob.ip.skincolorfilter/index.html
-.. image:: http://img.shields.io/badge/docs-latest-orange.png
+.. image:: http://img.shields.io/badge/docs-latest-orange.svg
    :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.ip.skincolorfilter/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/badges/master/build.svg
    :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/commits/master
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter
-.. image:: http://img.shields.io/pypi/v/bob.ip.skincolorfilter.png
+.. image:: http://img.shields.io/pypi/v/bob.ip.skincolorfilter.svg
    :target: https://pypi.python.org/pypi/bob.ip.skincolorfilter
-.. image:: http://img.shields.io/pypi/dm/bob.ip.skincolorfilter.png
+.. image:: http://img.shields.io/pypi/dm/bob.ip.skincolorfilter.svg
    :target: https://pypi.python.org/pypi/bob.ip.skincolorfilter
 
 
@@ -42,5 +42,5 @@ development `mailing list`_.
 
 .. Place your references here:
 .. _bob: https://www.idiap.ch/software/bob
-.. _installation: https://gitlab.idiap.ch/bob/bob/wikis/Installation
+.. _installation: https://www.idiap.ch/software/bob/install
 .. _mailing list: https://groups.google.com/forum/?fromgroups#!forum/bob-devel
