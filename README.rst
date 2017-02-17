@@ -5,8 +5,8 @@
    :target: http://pythonhosted.org/bob.ip.skincolorfilter/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.svg
    :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.ip.skincolorfilter/master/index.html
-.. image:: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/badges/master/build.svg
-   :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/commits/master
+.. image:: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/badges/v0.0.2/build.svg
+   :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/commits/v0.0.2
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter
 .. image:: http://img.shields.io/pypi/v/bob.ip.skincolorfilter.svg
