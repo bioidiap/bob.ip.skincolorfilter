@@ -7,6 +7,8 @@
    :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.ip.skincolorfilter/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/badges/master/build.svg
    :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/commits/master
+.. image:: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/badges/master/coverage.svg
+   :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/commits/master
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter
 .. image:: http://img.shields.io/pypi/v/bob.ip.skincolorfilter.svg
@@ -26,11 +28,10 @@ Bob_. It implements the skin color filter described in "Adaptive skin segmentati
 Installation
 ------------
 
-Follow our `installation`_ instructions. Then, using the Python interpreter
-provided by the distribution, bootstrap and buildout this package::
+Complete Bob's `installation`_ instructions. Then, to install this pacakge,
+run::
 
-  $ python bootstrap-buildout.py
-  $ ./bin/buildout
+  $ conda install bob.ip.skincolorfilter
 
 
 Contact
