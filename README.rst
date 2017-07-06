@@ -2,9 +2,9 @@
 .. Mon 05 Sep 2016 11:50:02 CEST
 
 .. image:: http://img.shields.io/badge/docs-stable-yellow.svg
-   :target: http://pythonhosted.org/bob.ip.skincolorfilter/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.ip.skincolorfilter/stable/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.svg
-   :target: https://www.idiap.ch/software/bob/docs/latest/bob/bob.ip.skincolorfilter/master/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.ip.skincolorfilter/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/badges/master/build.svg
    :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/commits/master
 .. image:: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter/badges/master/coverage.svg
@@ -12,8 +12,6 @@
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://gitlab.idiap.ch/bob/bob.ip.skincolorfilter
 .. image:: http://img.shields.io/pypi/v/bob.ip.skincolorfilter.svg
-   :target: https://pypi.python.org/pypi/bob.ip.skincolorfilter
-.. image:: http://img.shields.io/pypi/dm/bob.ip.skincolorfilter.svg
    :target: https://pypi.python.org/pypi/bob.ip.skincolorfilter
 
 
@@ -28,7 +26,7 @@ Bob_. It implements the skin color filter described in "Adaptive skin segmentati
 Installation
 ------------
 
-Complete Bob's `installation`_ instructions. Then, to install this pacakge,
+Complete Bob's `installation`_ instructions. Then, to install this package,
 run::
 
   $ conda install bob.ip.skincolorfilter
