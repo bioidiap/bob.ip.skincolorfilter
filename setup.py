@@ -33,11 +33,8 @@
 # allows you to test your package with new python dependencies w/o requiring
 # administrative interventions.
 
-# needed for C++ extensions
-#bob_packages = ['bob.core', 'bob.io.base', 'bob.io.image', 'bob.ip.base', 'bob.ip.facedetect']
-#dist.Distribution(dict(setup_requires = ['bob.extension', 'bob.blitz'] + bob_packages))
-
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages, dist
+dist.Distribution(dict(setup_requires = ['bob.extension']))
 
 # load the requirements.txt for additional requirements
 from bob.extension.utils import load_requirements
